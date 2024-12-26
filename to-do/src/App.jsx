@@ -1,11 +1,14 @@
 import React from 'react'
-import contextTestProvider from './context/contextTestProvider'
+import TodoContextProvider from './context/TodoContextProvider'
+import TodoInput from './components/TodoInput'
+import TodoList from './components/TodoList'
 
 function App() {
   return (
-    <contextTestProvider>
-      
-    </contextTestProvider>
+    <TodoContextProvider>
+      <TodoInput />
+      <TodoList />
+    </TodoContextProvider>
   )
 }
 
