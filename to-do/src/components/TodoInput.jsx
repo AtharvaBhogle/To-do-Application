@@ -1,22 +1,22 @@
 import React, { useState, useContext } from 'react'
-import TodoContext from '../context/Todocontext'
+import TodoContext from '../context/TodoContext'
 
 function TodoInput() {
     const [input, setInput] = useState("")
+   const { addTodo } = useContext(TodoContext)
 
-    const { addTodo } = useContext(TodoContext)
-
-    const handleAddTodo = (e) => {
-        e.preventDefault()
-
+   const handleAddTodo = (e) => {
+     e.preventDefault()
         addTodo(input)
-        setInput("")
-    }
+            setInput("")
+   }
 
   return (
     <div>
-      <input type="text" value={input} onChange={(e) => setInput(e.target.value)}/>
-      <button onClick={handleAddTodo}>Add Todo</button>
+      <input 
+       type="text" value={input} 
+       onChange={(e) => setInput(e.target.value)}/>
+          <button onClick={handleAddTodo}>Add Todo</button>
     </div>
   )
 }
